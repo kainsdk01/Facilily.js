@@ -11,37 +11,14 @@ npm install
 ## Uso básico
 
 ```js
-const { Cliente, Intencoes, combinar } = require('facility.js');
-
-const cliente = new Cliente({
-  intencoes: combinar(Intencoes.SERVIDORES, Intencoes.MENSAGENS_DO_SERVIDOR, Intencoes.CONTEUDO_DE_MENSAGEM),
-});
-
-cliente.on('pronto', () => {
-  console.log(`Logado como ${cliente.usuario.username}`);
-});
-
-cliente.on('mensagemCriada', (mensagem) => {
-  if (mensagem.conteudo === '!ping') {
-    mensagem.responder('Pong!');
-  }
-});
-
-cliente.entrar('SEU_TOKEN_AQUI');
-```
-
-## Sistema de comandos por código (`#funcao{}`)
-
-Assim como o aoi.js usa `$titulo[]`, aqui usamos `#titulo{}`. Registre um comando com `cliente.comando(nome, { codigo })` — o resultado é enviado automaticamente no canal ao final da execução (não precisa chamar nada pra "enviar").
-
-```js
-cliente.comando('perfil', {
-  codigo: `
-    #titulo{Perfil de #nomeAutor{}}
-    #cor{AZUL}
-    #descricao{Olá, #mencaoAutor{}! Você está no servidor #idServidor{}.}
-    #campo{ID do canal;#idCanal{};true}
-  `,
+// index.js — arquivo que liga o bot usando a facility.js
+require('facility.js').criar({
+  prefixo: '!',
+  intencoes: ['SERVIDORES', 'MENSAGENS_DO_SERVIDOR', 'CONTEUDO_DE_MENSAGEM'],
+  comandos: './comandos',
+  banco: { tipo: 'arquivo', caminho: './dados.json' }, // omita pra usar memória (não persiste)
+  token: 'SEU_TOKEN_AQUI',
+  depuracao: true, // mostra logs internos (conexão, comandos carregados, etc.)
 });
 ```
 

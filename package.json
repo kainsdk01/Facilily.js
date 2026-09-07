@@ -1,0 +1,10 @@
+{
+  "name": "facility.js",
+  "version": "1.0.0",
+  "description": "Biblioteca 100% brasileira para criar bots de Discord (gateway + REST) — API em português",
+  "main": "index.js",
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "license": "ISC"
+}

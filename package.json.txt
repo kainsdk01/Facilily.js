@@ -1,0 +1,42 @@
+{
+  "name": "facility.js",
+  "version": "1.0.0",
+  "description": "Biblioteca 100% brasileira para criar bots de Discord (gateway, REST e voz) com API inteiramente em portugues, incluindo um sistema de comandos por codigo no estilo #funcao[]",
+  "main": "index.js",
+  "files": [
+    "src",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "bot",
+    "portugues",
+    "brasileiro",
+    "api-portugues",
+    "gateway",
+    "voz"
+  ],
+  "author": "kains'dk",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEU_USUARIO/facility.js.git"
+  },
+  "homepage": "https://github.com/SEU_USUARIO/facility.js#readme",
+  "bugs": {
+    "url": "https://github.com/SEU_USUARIO/facility.js/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0",
+    "prism-media": "^1.3.5",
+    "tweetnacl": "^1.0.3",
+    "opusscript": "^0.0.8",
+    "ffmpeg-static": "^5.2.0"
+  }
+}

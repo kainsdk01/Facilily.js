@@ -5,7 +5,7 @@ Biblioteca 100% brasileira para criar bots de Discord em JavaScript. Toda a API 
 ## Instalação
 
 ```bash
-npm install
+npm install facility.js
 ```
 
 ## Uso básico

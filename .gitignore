@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente / segredos
+.env
+.env.local
+
+# Config real do bot (com token preenchido) na raiz do projeto de quem usa a lib
+# Os arquivos dentro de exemplo/ e exemplo-sem-js/ são templates e devem ser versionados
+/facility.config
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Build / cache
+dist/
+build/
+.cache/

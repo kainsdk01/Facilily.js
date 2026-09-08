@@ -76,6 +76,15 @@ registrar('campo', (args, ctx) => {
 
 registrar('texto', (args) => args[0] ?? '');
 
+// ---- Bot / eventos (não dependem de uma mensagem) ----
+
+registrar('nomeBot', (_args, ctx) => ctx.cliente.usuario?.username ?? '');
+
+registrar('log', (args) => {
+  console.log('[facility.js]', args[0] ?? '');
+  return '';
+});
+
 // ---- Contexto da mensagem ----
 
 registrar('mencaoAutor', (_args, ctx) => `<@${ctx.mensagem.autor.id}>`);

@@ -3,6 +3,7 @@ const { ClienteGateway } = require('./ClienteGateway');
 const { ClienteRest } = require('./ClienteRest');
 const { Mensagem } = require('./estruturas/Mensagem');
 const { ComandosGerenciador } = require('./ComandosGerenciador');
+const { EventosGerenciador } = require('./EventosGerenciador');
 
 class Cliente extends EventEmitter {
   constructor({ intencoes = 0, prefixo = '!' } = {}) {
@@ -13,10 +14,34 @@ class Cliente extends EventEmitter {
     this.servidores = new Map();
     this.variaveis = new Map();
     this.comandosGerenciador = new ComandosGerenciador(this);
+    this.eventosGerenciador = new EventosGerenciador(this);
   }
 
   comando(nome, opcoes) {
     this.comandosGerenciador.registrar(nome, opcoes);
+    return this;
+  }
+
+  /**
+   * Carrega todos os comandos de dentro de uma pasta, ao invés de
+   * registrar um por um com .comando().
+   * Ex: bot.carregarComandos('./comandos');
+   */
+  carregarComandos(caminhoPasta) {
+    this.comandosGerenciador.carregarPasta(caminhoPasta);
+    return this;
+  }
+
+  /**
+   * Carrega uma pasta de eventos em texto puro (pronto.txt, erro.txt, etc.),
+   * sem precisar escrever bot.on(...) manualmente.
+   * Ex: bot.carregarEventos('./eventos');
+   * Se a pasta não existir, simplesmente não faz nada (é opcional).
+   */
+  carregarEventos(caminhoPasta) {
+    if (require('node:fs').existsSync(caminhoPasta)) {
+      this.eventosGerenciador.carregarPasta(caminhoPasta);
+    }
     return this;
   }
 

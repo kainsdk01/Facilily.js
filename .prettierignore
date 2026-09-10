@@ -1,0 +1,4 @@
+node_modules/
+*.json.*.tmp
+economia.json
+avisos.json

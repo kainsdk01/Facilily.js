@@ -1,0 +1,49 @@
+{
+  "name": "facility.js",
+  "version": "2.5.0",
+  "description": "Biblioteca 100% brasileira para criar bots de Discord (gateway + REST) — API em português",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "facility": "./bin/facility.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "bot",
+    "gateway",
+    "portugues",
+    "brasil"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEU_USUARIO/Facility.js.git"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "prettier": "^3.3.3"
+  },
+  "license": "ISC"
+}

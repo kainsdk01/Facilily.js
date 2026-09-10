@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log*
+
+# Config local de quem usa a lib — guarda TOKEN em texto puro
+facility.config
+.env
+
+# Arquivos de dados gerados em runtime (economia, avisos, etc.)
+*.json.*.tmp
+economia.json
+avisos.json
+
+.DS_Store
